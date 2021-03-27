@@ -1,5 +1,6 @@
 package lucas.oliveira.myapplication
 
+import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -13,19 +14,22 @@ class ContactAdapter :RecyclerView.Adapter<ContactAdapter.ContactAdapterViewHold
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ContactAdapterViewHolder {
-        TODO("Not yet implemented")
+        val view = LayoutInflater.from(parent.context).inflate()//função para inflar o layout a ser criado
     }
 
     override fun onBindViewHolder(holder: ContactAdapterViewHolder, position: Int) {
-        TODO("Not yet implemented")
+        holder.bind(list.[position])// popular a view
     }
 
     override fun getItemCount(): Int {
-        TODO("Not yet implemented")
+        return list.size    //retorna tamanho da lista
     }
     class ContactAdapterViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         //criação de uma inner class que herda o recycler viewholder//var itemview do tipo View
         // classe que vai implementar os componentes do reclycer
+        fun bind(contact: Contact){
+
+        }
 
     }
 
